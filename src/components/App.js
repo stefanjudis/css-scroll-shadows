@@ -99,13 +99,19 @@ export function App(props) {
         </div>
 
         <div class="code">
-          <pre><code>${[
-            `background: ${gradientBackground};`,
-            `background-color: ${bgColor};`,
-            `background-repeat: no-repeat;`,
-            `background-attachment: local, local, scroll, scroll;`,
-            `background-size: ${gradientBackgroundSize};`
-          ].join('\n  ')}
+          <pre><code>
+          ${[
+            '.scrollGradient {',
+            [
+              `background: ${gradientBackground};`,
+              `background-color: ${bgColor};`,
+              `background-repeat: no-repeat;`,
+              `background-attachment: local, local, scroll, scroll;`,
+              `background-size: ${gradientBackgroundSize};`
+            ].join('\n  '),
+            '}'
+          ].join('\n')}
+        }
           </code></pre>
         </div>
       </div>

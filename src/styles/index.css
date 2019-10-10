@@ -52,6 +52,7 @@ main {
 .mini-scroll {
   margin: 2em 0;
   border: 2px solid var(--textColor);
+  border-radius: 0.25em;
   height: 15em;
   overflow: auto;
 

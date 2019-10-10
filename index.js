@@ -2,8 +2,10 @@ require = require('esm')(module);
 const { renderApp } = require('./src/server.js');
 
 const defaults = require('./defaults.js');
-const { readFile } = require('fs').promises;
+const { readFile: fsReadFile } = require('fs');
+const { promisify } = require('util');
 const { join } = require('path');
+const readFile = promisify(fsReadFile);
 
 module.exports = async (req, res) => {
   const { bgColor, shadowColor, pxSize } = { ...defaults, ...req.query };

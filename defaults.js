@@ -1,5 +1,5 @@
 module.exports = {
   bgColor: 'ffffff',
   shadowColor: '555555',
-  pxSize: 10
+  pxSize: 15
 };

@@ -14,7 +14,7 @@ export function renderApp({ css, bgColor, shadowColor, pxSize }) {
       <!DOCTYPE html>
       <html lang="en">
       <head>
-        <link href="https://fonts.googleapis.com/css?family=Comfortaa:700&display=swap&text=CSS%20Scroll%20Gradients" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:700&display=swap&text=CSS%20Scroll%20Shadows" rel="stylesheet">
         <style>
           :root {
             --bgColor: ${bgColor};
@@ -36,7 +36,7 @@ export function renderApp({ css, bgColor, shadowColor, pxSize }) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>CSS scroll gradient</title>
+        <title>CSS scroll shadows</title>
         <script type="module">
           import {renderApp} from './static/bundle.js';
           renderApp({bgColor: '${bgColor}', shadowColor: '${shadowColor}', pxSize: ${pxSize}});

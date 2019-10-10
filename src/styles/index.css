@@ -78,6 +78,14 @@ pre {
   padding: 1em;
 }
 
+svg {
+  fill: var(--textColor);
+}
+
+.svg-fill-bg {
+  fill: var(--bgColor);
+}
+
 label {
   & span {
     display: block;

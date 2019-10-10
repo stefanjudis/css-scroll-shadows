@@ -1,0 +1,8 @@
+{
+  "name": "scroll-gradient",
+  "builds": [
+    { "src": "*.js", "use": "@now/node" },
+    { "src": "static/*", "use": "@now/static" }
+  ],
+  "routes": [{ "src": "/", "dest": "/index.js" }]
+}

@@ -16,6 +16,7 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
     Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   color: var(--textColor);
+  text-align: center;
 }
 
 h1 {
@@ -23,6 +24,11 @@ h1 {
   font-family: 'Comfortaa', cursive;
   font-size: 2.5em;
   margin: 0 0 0.5em;
+}
+
+a {
+  color: currentColor;
+  font-weight: bold;
 }
 
 main {
@@ -51,7 +57,7 @@ main {
 
 .mini-scroll {
   margin: 2em 0;
-  border: 2px solid var(--textColor);
+  border: 2px solid var(--textColor, transparent);
   border-radius: 0.25em;
   height: 15em;
   overflow: auto;
@@ -65,10 +71,12 @@ main {
 
 .code {
   position: relative;
+  margin: 2em 0;
   background: #fff;
   color: #444;
-  border: 2px solid var(--textColor);
+  border: 2px solid var(--textColor, transparent);
   border-radius: 0.25em;
+  text-align: left;
 }
 
 pre {

@@ -125,8 +125,17 @@ export function App(props) {
         </div>
 
         <div class="mini-scroll gradient">
-          <div>Scroll down and watch the gradient...</div>
+          <div>Scroll down and watch the shadows disappear/appear...</div>
         </div>
+
+        <p>
+          If you want to learn why this works check ${' '}<a
+            href="http://lea.verou.me/2012/04/background-attachment-local/"
+            >this article</a
+          >
+          ${' '}by${' '}
+          <a href="https://twitter.com/LeaVerou">Lea Verou</a>.
+        </p>
 
         <div class="code">
           <pre><code>
@@ -145,6 +154,11 @@ export function App(props) {
           ].join('\n')}
           </code></pre>
         </div>
+
+        <p>
+          Brought to you by${' '}
+          <a href="https://twitter.com/stefanjudis">Stefan Judis</a>.
+        </p>
       </div>
     </div>
   `;

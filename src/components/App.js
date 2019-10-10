@@ -1,7 +1,7 @@
 import { html } from 'htm/preact';
 import { useEffect, useState } from 'preact/hooks';
 import getGradientProperties from '../util/get-gradient.js';
-import a11yColor from 'a11yColor';
+import a11yColor from 'a11ycolor';
 
 function updateHistory({ bgColor, shadowColor, pxSize }) {
   history.replaceState(

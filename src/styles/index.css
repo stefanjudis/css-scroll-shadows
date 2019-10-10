@@ -65,17 +65,24 @@ main {
 
 .code {
   position: relative;
-
-  & > button {
-    position: absolute;
-    top: 0.5em;
-    right: 0.5em;
-  }
+  background: #fff;
+  color: #444;
+  border: 2px solid var(--textColor);
+  border-radius: 0.25em;
 }
 
 pre {
   overflow: auto;
   padding: 1em;
+  background: linear-gradient(90deg, #ffffff 30%, rgba(255, 255, 255, 0)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0), #ffffff 70%) 0 100%,
+    radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.4), transparent),
+    radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.4), transparent)
+      0 100%;
+  background-repeat: no-repeat;
+  background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+  background-position: 0 0, 100%, 0 0, 100%;
+  background-attachment: local, local, scroll, scroll;
 }
 
 svg {

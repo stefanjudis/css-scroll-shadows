@@ -19,8 +19,17 @@ export function App(props) {
   const [shadowColor, setShadowColor] = useState(props.shadowColor);
   const [pxSize, setPxSize] = useState(props.pxSize);
 
-  const [gradientBackground, setGradientBackground] = useState(null);
-  const [gradientBackgroundSize, setGradientBackgroundSize] = useState(null);
+  const {
+    gradientBackground: gb,
+    gradientBackgroundSize: gbs
+  } = getGradientProperties({
+    bgColor,
+    pxSize,
+    shadowColor
+  });
+
+  const [gradientBackground, setGradientBackground] = useState(gb);
+  const [gradientBackgroundSize, setGradientBackgroundSize] = useState(gbs);
 
   useEffect(() => {
     updateHistory({ bgColor, shadowColor, pxSize });

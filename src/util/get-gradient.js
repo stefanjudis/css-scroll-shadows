@@ -16,27 +16,6 @@ function hexToRgbA(hex, alpha) {
 }
 
 export default function({ bgColor, shadowColor, pxSize }) {
-  // const gradientCSS = `
-  // background:
-  // /* Shadow covers */
-  // linear-gradient(${bgColor} 30%, ${hexToRgbA(bgColor, 0)}),
-  // linear-gradient(${hexToRgbA(bgColor, 0)}, ${bgColor} 70%) 0 100%,
-
-  // /* Shadows */
-  // radial-gradient(farthest-side at 50% 0, ${hexToRgbA(
-  //   shadowColor,
-  //   0.5
-  // )}, rgba(0,0,0,0)),
-  // radial-gradient(farthest-side at 50% 100%, ${hexToRgbA(
-  //   shadowColor,
-  //   0.5
-  // )}, rgba(0,0,0,0)) 0 100%;
-  // // background-repeat: no-repeat;
-  // // background-color: ${bgColor};
-  // // background-size: 100% 40px, 100% 40px, 100% ${pxSize}, 100% ${pxSize};
-  // // background-attachment: local, local, scroll, scroll;
-  // `;
-
   return {
     gradientBackground: `
     linear-gradient(${bgColor} 30%, ${hexToRgbA(bgColor, 0)}),

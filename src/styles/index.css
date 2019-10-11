@@ -119,6 +119,14 @@ button {
   border-radius: 0.25em;
   font-size: 1em;
   padding: 0.5em 4em;
+  cursor: pointer;
+
+  &:not([disabled]) {
+    &:hover,
+    &:focus {
+      transform: scale(1.125);
+    }
+  }
 
   &[disabled] {
     opacity: 0.85;

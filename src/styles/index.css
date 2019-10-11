@@ -42,7 +42,7 @@ main {
 
 .container {
   width: 100%;
-  padding: 5em 3em;
+  padding: 5em 2em;
 }
 
 .controls {
@@ -182,9 +182,11 @@ label {
 
 .stackList {
   list-style: none;
+  margin: 0;
+  padding: 0;
 
   & > li + li {
-    margin-top: 0.5em;
+    margin-top: 1em;
   }
 }
 

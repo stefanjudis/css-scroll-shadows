@@ -14,7 +14,7 @@ export function renderApp({ css, bgColor, shadowColor, pxSize }) {
       <!DOCTYPE html>
       <html lang="en">
       <head>
-        <link href="https://fonts.googleapis.com/css?family=Comfortaa:700&display=swap&text=CSS%20Scroll%20Shadows" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:700&display=swap&text=CSS%20Scroll%20Shadows!" rel="stylesheet">
         <style>
           :root {
             --bgColor: ${bgColor};

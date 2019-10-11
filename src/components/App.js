@@ -18,6 +18,7 @@ export function App(props) {
   const [bgColor, setBgColor] = useState(props.bgColor);
   const [shadowColor, setShadowColor] = useState(props.shadowColor);
   const [pxSize, setPxSize] = useState(props.pxSize);
+  const [cssWasCopied, setCssWasCopied] = useState(false);
 
   const {
     gradientBackground: gb,
@@ -52,6 +53,7 @@ export function App(props) {
 
     setGradientBackground(gradientBackground);
     setGradientBackgroundSize(gradientBackgroundSize);
+    setCssWasCopied(false);
   }, [bgColor, shadowColor, pxSize]);
 
   useEffect(() => {
@@ -67,6 +69,36 @@ export function App(props) {
       gradientBackgroundSize
     );
   }, [gradientBackgroundSize]);
+
+  const CSS = [
+    '.scrollGradient {',
+    [
+      `background: ${gradientBackground};`,
+      `background-color: ${bgColor};`,
+      `background-repeat: no-repeat;`,
+      `background-attachment: local, local, scroll, scroll;`,
+      `background-size: ${gradientBackgroundSize};`
+    ]
+      .map(l => `  ${l}`)
+      .join('\n'),
+    '}'
+  ].join('\n');
+
+  function copyCSS(CSS) {
+    // https://hackernoon.com/copying-text-to-clipboard-with-javascript-df4d4988697f
+    // too lazy to think about that, sorry...
+    const el = document.createElement('textarea');
+    el.value = CSS;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+
+    setCssWasCopied(true);
+  }
 
   return html`
     <div class="container">
@@ -94,6 +126,9 @@ export function App(props) {
       ></a>
       <div class="box">
         <h1>CSS Scroll Shadows!</h1>
+        <p class="intro">
+          Adjust the controls (👇) and see the CSS scroll shadows change
+        </p>
         <div class="controls">
           <label>
             <span>Background color</span>
@@ -125,8 +160,41 @@ export function App(props) {
         </div>
 
         <div class="mini-scroll gradient">
-          <div>Scroll down and watch the shadows disappear/appear...</div>
+          <div>
+            <p>
+              Scroll down and watch the CSS scroll shadows disappear/appear...
+            </p>
+            <svg
+              width="100pt"
+              height="100pt"
+              version="1.1"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m97.5 50c0-26.199-21.301-47.5-47.5-47.5s-47.5 21.301-47.5 47.5 21.301 47.5 47.5 47.5 47.5-21.301 47.5-47.5zm-51.199 25.602-15.902-15.902c-1-1-1.5-2.3008-1.5-3.6992s0.5-2.6992 1.5-3.6992c2-2 5.3008-2 7.3984 0l7 7 0.003906-31.301c0-2.8984 2.3008-5.1992 5.1992-5.1992s5.1992 2.3008 5.1992 5.1992v31.398l7-7c2-2 5.3008-2 7.3984 0 2 2 2 5.3008 0 7.3984l-15.898 15.805c-2.0977 2.0977-5.3008 2.0977-7.3984 0z"
+              />
+            </svg>
+          </div>
         </div>
+
+        <div class="code">
+          <pre><code>
+          ${CSS}
+          </code></pre>
+        </div>
+
+        ${cssWasCopied
+          ? html`
+              <button type="button" disabled>
+                CSS was copied to your clipboard...
+              </button>
+            `
+          : html`
+              <button type="button" onClick=${e => copyCSS(CSS)}>
+                Copy CSS
+              </button>
+            `}
 
         <p>
           If you want to learn why this works check ${' '}<a
@@ -137,28 +205,32 @@ export function App(props) {
           <a href="https://twitter.com/LeaVerou">Lea Verou</a>.
         </p>
 
-        <div class="code">
-          <pre><code>
-          ${[
-            '.scrollGradient {',
-            [
-              `background: ${gradientBackground};`,
-              `background-color: ${bgColor};`,
-              `background-repeat: no-repeat;`,
-              `background-attachment: local, local, scroll, scroll;`,
-              `background-size: ${gradientBackgroundSize};`
-            ]
-              .map(l => `  ${l}`)
-              .join('\n'),
-            '}'
-          ].join('\n')}
-          </code></pre>
-        </div>
+        <footer>
+          <h2>Built with:</h2>
+          <ul class="stackList">
+            <li>
+              <a href="https://preactjs.com">Preact</a> – client and server-side
+              rendering
+            </li>
+            <li>
+              <a href="https://postcss.org">PostCSS</a> – to write future CSS
+              today
+            </li>
+            <li>
+              <a href="https://github.com/developit/htm">htm</a> – to not deal
+              with JSX
+            </li>
+            <li>
+              <a href="https://zeit.co/home">now.sh</a> – to easily deploy a
+              serverless function
+            </li>
+          </ul>
 
-        <p>
-          Brought to you by${' '}
-          <a href="https://twitter.com/stefanjudis">Stefan Judis</a>.
-        </p>
+          <p class="u-marginTopLarge">
+            Brought to you by${' '}
+            <a href="https://twitter.com/stefanjudis">Stefan Judis</a>.
+          </p>
+        </footer>
       </div>
     </div>
   `;

@@ -197,7 +197,7 @@ export function App(props) {
             `}
 
         <p>
-          If you want to learn why this works check ${' '}<a
+          If you want to learn how this works check ${' '}<a
             href="http://lea.verou.me/2012/04/background-attachment-local/"
             >this article</a
           >

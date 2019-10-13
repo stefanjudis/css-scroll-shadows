@@ -31,6 +31,7 @@
     "htm": "^2.2.1",
     "preact": "^10.0.0",
     "preact-render-to-string": "^5.0.6",
+    "randomcolor": "^0.5.4",
     "rollup": "^1.23.1",
     "rollup-plugin-node-resolve": "^5.2.0"
   },

@@ -205,6 +205,15 @@ export function App(props) {
           <a href="https://twitter.com/LeaVerou">Lea Verou</a>.
         </p>
 
+        <p>
+          <strong style="display: block; margin-bottom: 0.5em;"
+            >Watch out!</strong
+          >${' '}
+          <a href="https://twitter.com/xiel/status/1188927523394076672"
+            >As Felix Leupold pointed out</a
+          >,${' '} the CSS above doesn't work in latest Mobile Safari anymore.
+        </p>
+
         <footer>
           <h2>Built with:</h2>
           <ul class="stackList">

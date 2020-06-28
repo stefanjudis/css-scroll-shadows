@@ -61,4 +61,6 @@ typings/
 .next
 
 # generated stuff
-static
+public
+
+.vercel

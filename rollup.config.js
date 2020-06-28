@@ -5,12 +5,12 @@ const { terser } = require('rollup-plugin-terser');
 module.exports = {
   input: 'src/browser.js',
   output: {
-    file: 'static/bundle.js',
-    format: 'esm'
+    file: 'public/bundle.js',
+    format: 'esm',
   },
   plugins: [
     resolve(),
     commonjs(),
-    process.env.NODE_ENV === 'production' ? terser() : null
-  ]
+    process.env.NODE_ENV === 'production' ? terser() : null,
+  ],
 };

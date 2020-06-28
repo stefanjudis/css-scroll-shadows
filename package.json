@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:css": "postcss ./src/styles/index.css -o ./public/main.css -w -u postcss-nesting postcss-clean",
+    "dev:css": "postcss ./src/styles/index.css -o ./api/main.css -w -u postcss-nesting postcss-clean",
     "dev:javascript": "rollup -cw",
-    "dev:server": "vercel dev",
     "dev": "concurrently \"npm:dev:*\"",
-    "build:css": "postcss ./src/styles/index.css -o ./public/main.css -u postcss-nesting postcss-clean --no-map",
+    "build:css": "postcss ./src/styles/index.css -o ./api/main.css -u postcss-nesting postcss-clean --no-map",
     "build:javascript": "NODE_ENV=production rollup -c",
     "build": "concurrently \"npm:build:*\"",
     "test": "echo \"Error: no test specified\" && exit 1"

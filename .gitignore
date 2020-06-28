@@ -62,5 +62,6 @@ typings/
 
 # generated stuff
 public
+api/main.css
 
 .vercel

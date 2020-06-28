@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm:dev:*\"",
     "build:css": "postcss ./src/styles/index.css -o ./static/main.css -u postcss-nesting postcss-clean --no-map",
     "build:javascript": "NODE_ENV=production rollup -c",
-    "deploy": "npm run build:css && npm run build:javascript && now --prod",
+    "build": "npm run build:css && npm run build:javascript",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

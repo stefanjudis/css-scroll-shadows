@@ -18,8 +18,8 @@ function hexToRgbA(hex, alpha) {
 export default function({ bgColor, shadowColor, pxSize }) {
   return {
     gradientBackground: `
-    linear-gradient(${bgColor} 30%, ${hexToRgbA(bgColor, 0)}),
-    linear-gradient(${hexToRgbA(bgColor, 0)}, ${bgColor} 70%) 0 100%,
+    linear-gradient(${bgColor} 33%, ${hexToRgbA(bgColor, 0)}),
+    linear-gradient(${hexToRgbA(bgColor, 0)}, ${bgColor} 66%) 0 100%,
     radial-gradient(farthest-side at 50% 0, ${hexToRgbA(
       shadowColor,
       0.5
@@ -28,7 +28,7 @@ export default function({ bgColor, shadowColor, pxSize }) {
       shadowColor,
       0.5
     )}, rgba(0,0,0,0)) 0 100%`,
-    gradientBackgroundSize: `100% ${pxSize * 2}px, 100% ${pxSize *
-      2}px, 100% ${pxSize}px, 100% ${pxSize}px`
+    gradientBackgroundSize: `100% ${pxSize * 3}px, 100% ${pxSize *
+      3}px, 100% ${pxSize}px, 100% ${pxSize}px`
   };
 }

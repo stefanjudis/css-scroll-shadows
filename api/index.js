@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
     ...req.query,
   };
 
-  const css = await readFile(join(__dirname, 'public', 'main.css'));
+  const css = await readFile(join(__dirname, '..', 'main.css'));
   res.status(200).send(
     renderApp({
       css,

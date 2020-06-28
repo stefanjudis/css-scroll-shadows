@@ -38,7 +38,7 @@ export function renderApp({ css, bgColor, shadowColor, pxSize }) {
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>CSS scroll shadows</title>
         <script type="module">
-          import {renderApp} from './public/bundle.js';
+          import {renderApp} from './bundle.js';
           renderApp({bgColor: '${bgColor}', shadowColor: '${shadowColor}', pxSize: ${pxSize}});
         </script>
       </head>

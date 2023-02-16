@@ -207,11 +207,12 @@ export function App(props) {
 
         <p>
           <strong style="display: block; margin-bottom: 0.5em;"
-            >Watch out!</strong
+            >Watch out for some iOS versions!</strong
           >${' '}
-          <a href="https://twitter.com/xiel/status/1188927523394076672"
-            >As Felix Leupold pointed out</a
-          >,${' '} the CSS above doesn't work in latest Mobile Safari anymore.
+          <a href="https://twitter.com/chriscoyier/status/1552771926912811008"
+            >As Chris Coyier pointed out</a
+          >,${' '} the CSS above stopped working on IOS 13 but has since
+          been fixed and works on iOS 15+
         </p>
 
         <footer>

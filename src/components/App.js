@@ -207,9 +207,9 @@ export function App(props) {
           <strong style="display: block; margin-bottom: 0.5em;"
             >Watch out for some iOS versions!</strong
           >${' '}
-          <a href="https://caniuse.com/background-attachment"
-            ><code>background-attachment</code>: local</code> didn't work on IOS 13</a
-          >but has been fixed and works again on iOS 15+.
+          <a href="https://caniuse.com/background-attachment">
+            <code>background-attachment</code>: local</code> didn't work on IOS 13
+          </a> but has been fixed and works again on iOS 15+.
         </p>
 
         <footer>

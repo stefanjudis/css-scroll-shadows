@@ -227,7 +227,7 @@ export function App(props) {
               with JSX
             </li>
             <li>
-              <a href="https://zeit.co/home">now.sh</a> – to easily deploy a
+              <a href="https://vercel.com">Vercel</a> – to easily deploy a
               serverless function
             </li>
           </ul>

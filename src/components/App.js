@@ -20,14 +20,12 @@ export function App(props) {
   const [pxSize, setPxSize] = useState(props.pxSize);
   const [cssWasCopied, setCssWasCopied] = useState(false);
 
-  const {
-    gradientBackground: gb,
-    gradientBackgroundSize: gbs
-  } = getGradientProperties({
-    bgColor,
-    pxSize,
-    shadowColor
-  });
+  const { gradientBackground: gb, gradientBackgroundSize: gbs } =
+    getGradientProperties({
+      bgColor,
+      pxSize,
+      shadowColor,
+    });
 
   const [gradientBackground, setGradientBackground] = useState(gb);
   const [gradientBackgroundSize, setGradientBackgroundSize] = useState(gbs);
@@ -42,14 +40,12 @@ export function App(props) {
       a11yColor('#555', bgColor)
     );
 
-    const {
-      gradientBackground,
-      gradientBackgroundSize
-    } = getGradientProperties({
-      bgColor,
-      pxSize,
-      shadowColor
-    });
+    const { gradientBackground, gradientBackgroundSize } =
+      getGradientProperties({
+        bgColor,
+        pxSize,
+        shadowColor,
+      });
 
     setGradientBackground(gradientBackground);
     setGradientBackgroundSize(gradientBackgroundSize);
@@ -77,11 +73,11 @@ export function App(props) {
       `background-color: ${bgColor};`,
       `background-repeat: no-repeat;`,
       `background-attachment: local, local, scroll, scroll;`,
-      `background-size: ${gradientBackgroundSize};`
+      `background-size: ${gradientBackgroundSize};`,
     ]
-      .map(l => `  ${l}`)
+      .map((l) => `  ${l}`)
       .join('\n'),
-    '}'
+    '}',
   ].join('\n');
 
   function copyCSS(CSS) {
@@ -135,7 +131,7 @@ export function App(props) {
             <input
               type="color"
               value=${bgColor}
-              onInput=${e => setBgColor(e.target.value)}
+              onInput=${(e) => setBgColor(e.target.value)}
             />
           </label>
           <label>
@@ -143,7 +139,7 @@ export function App(props) {
             <input
               type="color"
               value=${shadowColor}
-              onInput=${e => setShadowColor(e.target.value)}
+              onInput=${(e) => setShadowColor(e.target.value)}
             />
           </label>
 
@@ -154,7 +150,7 @@ export function App(props) {
               min="5"
               max="50"
               value=${pxSize}
-              onInput=${e => setPxSize(e.target.value)}
+              onInput=${(e) => setPxSize(e.target.value)}
             />
           </label>
         </div>
@@ -184,17 +180,19 @@ export function App(props) {
           </code></pre>
         </div>
 
-        ${cssWasCopied
-          ? html`
-              <button type="button" disabled>
-                CSS was copied to your clipboard...
-              </button>
-            `
-          : html`
-              <button type="button" onClick=${e => copyCSS(CSS)}>
-                Copy CSS
-              </button>
-            `}
+        ${
+          cssWasCopied
+            ? html`
+                <button type="button" disabled>
+                  CSS was copied to your clipboard...
+                </button>
+              `
+            : html`
+                <button type="button" onClick=${(e) => copyCSS(CSS)}>
+                  Copy CSS
+                </button>
+              `
+        }
 
         <p>
           If you want to learn how this works check ${' '}<a
@@ -209,10 +207,9 @@ export function App(props) {
           <strong style="display: block; margin-bottom: 0.5em;"
             >Watch out for some iOS versions!</strong
           >${' '}
-          <a href="https://twitter.com/chriscoyier/status/1552771926912811008"
-            >As Chris Coyier pointed out</a
-          >,${' '} the CSS above stopped working on IOS 13 but has since
-          been fixed and works on iOS 15+
+          <a href="https://caniuse.com/background-attachment"
+            ><code>background-attachment</code>: local</code> didn't work on IOS 13</a
+          >but has been fixed and works again on iOS 15+.
         </p>
 
         <footer>

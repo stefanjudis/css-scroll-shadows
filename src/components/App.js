@@ -180,19 +180,17 @@ export function App(props) {
           </code></pre>
         </div>
 
-        ${
-          cssWasCopied
-            ? html`
-                <button type="button" disabled>
-                  CSS was copied to your clipboard...
-                </button>
-              `
-            : html`
-                <button type="button" onClick=${(e) => copyCSS(CSS)}>
-                  Copy CSS
-                </button>
-              `
-        }
+        ${cssWasCopied
+          ? html`
+              <button type="button" disabled>
+                CSS was copied to your clipboard...
+              </button>
+            `
+          : html`
+              <button type="button" onClick=${(e) => copyCSS(CSS)}>
+                Copy CSS
+              </button>
+            `}
 
         <p>
           If you want to learn how this works check ${' '}<a
@@ -208,8 +206,10 @@ export function App(props) {
             >Watch out for some iOS versions!</strong
           >${' '}
           <a href="https://caniuse.com/background-attachment">
-            <code>background-attachment</code>: local</code> didn't work on IOS 13
-          </a> but has been fixed and works again on iOS 15+.
+            <code>background-attachment: local</code> didn't work on IOS 13 and
+            14
+          </a>
+          but has been fixed and works again on iOS 15+.
         </p>
 
         <footer>

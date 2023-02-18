@@ -207,9 +207,8 @@ export function App(props) {
           >${' '}
           <a href="https://caniuse.com/background-attachment">
             <code>background-attachment: local</code> didn't work on IOS 13 and
-            14
-          </a>
-          but has been fixed and works again on iOS 15+.
+            14 </a
+          >${' '} but has been fixed and works again on iOS 15+.
         </p>
 
         <footer>
